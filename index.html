@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A Little Surprise for You 🎁</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom, #ffe4ec, #fff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff4d6d;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background-color: #ff6b81;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff3d61;
+    }
+
+    #messageBox {
+      margin-top: 30px;
+      font-size: 1.4em;
+      color: #333;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
-    <h1> 너 설마 궁금해서라도 이걸 보고 있지는 않겠지?</h1>
-    <span></span>
+  <h1>A Little Surprise for You 🎁</h1>
+  <button onclick="nextMessage()">Open it 💌</button>
+  <div id="messageBox"></div>
+
+  <script>
+    const messages = [
+      "The day we met was the beginning of my favorite chapter.",
+      "Every moment with you feels like magic.",
+      "Your smile brightens my darkest days.",
+      "Thank you for being my person — always.",
+      "I love you. Today, tomorrow, and forever. ❤️"
+    ];
+
+    let index = 0;
+
+    function nextMessage() {
+      const box = document.getElementById("messageBox");
+      if (index < messages.length) {
+        box.innerText = messages[index];
+        index++;
+      } else {
+        box.innerHTML = "<strong>🎉 Thank you for reading until the end!</strong><br><em>There's more coming your way... 😉</em>";
+      }
+    }
+  </script>
 </body>
 </html>
